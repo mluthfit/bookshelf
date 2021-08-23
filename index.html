@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://kit.fontawesome.com/6a7fa42af7.js" crossorigin="anonymous"></script>
+
+  <title>Bookshelf Apps</title>
+</head>
+<body>
+  <section id="dialog" class="dialog-box flex">  
+    <div class="header-box dialog-container">
+      <p>Are you sure?</p>
+      <span class="dialog-btn">
+        <i class="fas fa-check hover-green" id="success"></i>
+        <i class="fas fa-times hover-red" id="invalid"></i>
+      </span>
+    </div>
+  </section>
+  <section class="container pattern">
+    <!-- Title -->
+    <h2 class="header-box">Bookshelf Apps</h2>
+
+    <!-- Form for new book -->
+    <div class="width-50 left header-box">
+      <h3>Enter New Book</h3>
+      <form id="create-new-book">
+        <div class="normal-input">
+          <label for="title">Title<span class="red">*</span></label>  
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div class="normal-input">
+          <label for="author">Author<span class="red">*</span></label>
+          <input type="text" name="author" id="author" required>
+        </div>
+        <div class="normal-input">
+          <label for="year">Year<span class="red">*</span></label>
+          <input type="number" name="year" id="year" required>
+        </div>
+        <div class="check-input">
+          <input type="checkbox" name="finishedReading" id="finishedReading">
+          <label for="finishedReading">Finished Reading</label>
+        </div>
+        <div class="btn">
+          <input type="submit" value="Save">
+        </div>
+      </form>
+    </div>
+    
+    <!-- Render all books -->
+    <div id="render" class="width-50 right header-box">
+      <!-- Search book -->
+      <div>
+        <h3>Search Book</h3>
+        <form id="search">
+          <input type="text" id="searchTitle" name="searchTitle" class="input-search" placeholder="Title">
+          <input type="submit" value="Search" class="button-search right">  
+        </form>
+      </div>
+
+      <!-- Unfinished books -->
+      <div>
+        <h3>Unfinished Book List</h3>
+        <div id="listBookUnread">
+          <!-- List of books -->
+        </div>
+      </div>
+
+      <!-- Finished books -->
+      <div>
+        <h3>Finished Book List</h3>
+        <div id="listBookRead">
+          <!-- List of books -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="assets/js/dialog.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/event.js"></script>
+</body>
+</html>

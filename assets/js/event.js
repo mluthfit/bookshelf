@@ -1,7 +1,6 @@
 window.addEventListener('load', function() {
   if (typeof(Storage) !== 'undefined') {
     onBeforeRender();
-    dialogBox.style.display = "none";
     if (localStorage.getItem(allBook) === null) {
       localStorage.setItem(allBook, '')
     } else {
@@ -44,14 +43,6 @@ const addEventTrash = () => {
   for (let trash of trashs) {
     trash.addEventListener('click', function() {
       const id = trash.parentNode.parentNode.getAttribute('id');
-      // const bookIndex = searchBookObjectById(id);
-  
-      // data.splice(bookIndex, 1);
-      // localStorage.setItem(allBook, JSON.stringify(data));
-  
-      // onBeforeRender();
-      // renderData();
-      // checkEmpty();
       dialogBox.setAttribute('id', id);
       dialogBox.style.display = "flex";
     });
